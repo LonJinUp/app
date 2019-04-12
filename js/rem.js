@@ -65,9 +65,3 @@ function getsign(){
     obj.time = time;
     return obj;
 }
-//ios下微信input失去焦点页面显示问题
-$("input,select").blur(function () {
-    setTimeout(() => {
-        window.scrollTo(0, 0);
-    }, 100);
-});
