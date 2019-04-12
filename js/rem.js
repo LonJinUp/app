@@ -48,13 +48,13 @@ function getCookie(name) {
 function delCookie(name) {
     setCookie(name, null, -1);
 };
-// //用于flex定位下的input，失去焦点布局被顶上去
-// $("input,select").blur(function () {
-//     setTimeout(() => {
-//         const scrollHeight = document.documentElement.scrollTop || document.body.scrollTop || 0;
-//         window.scrollTo(0, Math.max(scrollHeight - 1, 0));
-//     }, 100);
-// });
+//用于flex定位下的input，失去焦点布局被顶上去
+$("input,select").blur(function () {
+    setTimeout(() => {
+        const scrollHeight = document.documentElement.scrollTop || document.body.scrollTop || 0;
+        window.scrollTo(0, Math.max(scrollHeight - 1, 0));
+    }, 100);
+});
 
 //接口签名sign
 function getsign(){
@@ -65,9 +65,9 @@ function getsign(){
     obj.time = time;
     return obj;
 }
-// //ios下微信input失去焦点页面显示问题
-// $("input,select").blur(function () {
-//     setTimeout(() => {
-//         window.scrollTo(0, 0);
-//     }, 100);
-// });
+//ios下微信input失去焦点页面显示问题
+$("input,select").blur(function () {
+    setTimeout(() => {
+        window.scrollTo(0, 0);
+    }, 100);
+});
