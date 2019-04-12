@@ -173,7 +173,7 @@
 </style>
 <body>
 <div class="box">
-    <input type="text" class="title" placeholder="输入兑换码" id="RedemptionCode">
+    <input type="text" class="title" placeholder="输入兑换码" id="RedemptionCode" onclick="intoView(this)">
     <div class="btn" id="exchange">兑换</div>
 </div>
 </body>
@@ -181,6 +181,11 @@
 <script src="js/rem.js"></script>
 <script src="layer/layer.js"></script>
 <script>
+    function intoView(el) {
+        setTimeout(function() {
+            el.scrollIntoViewIfNeeded();
+        }, 500);
+    }
 
     var UserId=GetURL("user_id");
     if(UserId==null){
