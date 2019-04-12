@@ -172,6 +172,15 @@
 <script src="js/rem.js"></script>
 <script src="layer/layer.js"></script>
 <script>
+
+        window.addEventListener('resize', function () {
+            if (document.activeElement.tagName == 'INPUT' || document.activeElement.tagName == 'TEXTAREA') {
+                window.setTimeout(function () {
+                    document.activeElement.scrollIntoViewIfNeeded();
+                }, 0);
+            }
+        });
+
     var UserId=GetURL("user_id");
     if(UserId==null){
         layer.open({
