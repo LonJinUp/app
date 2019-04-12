@@ -173,13 +173,19 @@
 <script src="layer/layer.js"></script>
 <script>
 
-    $('input[type="text"],textarea').on('click', function () {
-        var target = this;
-        setTimeout(function(){
-            target.scrollIntoViewIfNeeded();
-            console.log('scrollIntoViewIfNeeded');
-        },400);
+
+    $(function(){
+        // 让当前对象滚动到顶部
+        $("#RedemptionCode").click(function(){
+            setTimeout(function(){
+                document.getElementById("name").scrollintoview();// 参数可以是true， false, 空参数
+            }, 300);
+        });
+
+        // 让当前对象上面的元素滚动到顶部，使当前对象处于比较中间的位置
+
     });
+
 
     var UserId=GetURL("user_id");
     if(UserId==null){
