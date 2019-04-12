@@ -173,13 +173,14 @@
 <script src="layer/layer.js"></script>
 <script>
 
-        window.addEventListener('resize', function () {
-            if (document.activeElement.tagName == 'INPUT' || document.activeElement.tagName == 'TEXTAREA') {
-                window.setTimeout(function () {
-                    document.activeElement.scrollIntoViewIfNeeded();
-                }, 0);
-            }
-        });
+    window.onresize = function () {
+        if (document.activeElement.tagName == "input" || document.activeElement.tagName == "textarea") {
+            setTimeout(function () {
+                var top = document.activeElement.getBoundingClientRect().top;
+                window.scrollTo(0,top);
+            }, 0);
+        }
+    }
 
     var UserId=GetURL("user_id");
     if(UserId==null){
