@@ -24,7 +24,7 @@ function GetURL(name) {
     var r = window.location.search.substr(1).match(reg);
     if (r != null) return unescape(r[2]);
     return null;
-};
+}
 
 //设置cooke
 function setCookie(name, value, day) {
@@ -56,6 +56,9 @@ $("input,select").blur(function () {
     }, 100);
 });
 
+function rule(str){
+    if(str.replace(/\s/,"").length!=0){return true;}else{return false;}
+}
 //接口签名sign
 function getsign(){
     var time = new Date().getTime();
